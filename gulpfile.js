@@ -69,7 +69,8 @@ gulp.task('build-afterglow', ['compileES6'], function(){
 	.pipe(plugins.addSrc.append([
 		'./vendor/videojs/plugins/videojs.hotkeys.js',
 		'./vendor/videojs/plugins/Youtube.js',
-		'./vendor/videojs/plugins/videojs-vimeo.js'
+		'./vendor/videojs/plugins/videojs-vimeo.js',
+		'./vendor/videojs/plugins/videojs-hls.js'
 		]))
 	.pipe(plugins.addSrc.append([
 		'./dist/tmp/afterglow-bundle.js'

@@ -36,11 +36,11 @@ class Config {
 			let util = new Util;
 			// Initialize youtube if the current player is a youtube player
 			if(util.isYoutubePlayer(this.videoelement)){
-				this.setYoutubeOptions();	
+				this.setYoutubeOptions();
 			}
 			// Initialize vimeo if the current player is a vimeo player
 			if(util.isVimeoPlayer(this.videoelement)){
-				this.setVimeoOptions();	
+				this.setVimeoOptions();
 			}
 		}
 	}
@@ -52,10 +52,20 @@ class Config {
 	setDefaultOptions(){
 		// Controls needed for the player
 		this.options.controls = true;
-		
+
 		// Default tech order
 		this.options.techOrder = ["Html5"];
-	
+
+		this.options.html5 = {
+		  nativeAudioTracks: false,
+			nativeVideoTracks: false
+		};
+
+		this.options.hls = {
+		  withCredentials: true,
+			overrideNative: true
+		};
+
 		// Some default player parameters
 		this.options.preload = this.getPlayerAttributeFromVideoElement('preload','auto');
 		this.options.autoplay = this.getPlayerAttributeFromVideoElement('autoplay');
